@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Download, Video, Zap, Shield, CheckCircle2 } from "lucide-react";
+import { Download, Sparkles, Shield, Zap } from "lucide-react";
 import { toast } from "sonner";
 import Layout from "@/components/Layout";
 
@@ -22,138 +22,153 @@ const Home = () => {
 
     setLoading(true);
     
-    // Simulate download process - you'll need to implement actual API integration
     setTimeout(() => {
       toast.success("Video is ready for download!");
       setLoading(false);
     }, 2000);
   };
 
-  const features = [
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "Download TikTok videos in seconds with our optimized servers"
-    },
-    {
-      icon: Shield,
-      title: "100% Safe & Secure",
-      description: "No registration required. Your privacy is our priority"
-    },
-    {
-      icon: Video,
-      title: "High Quality",
-      description: "Download videos in the best available quality without watermarks"
-    }
-  ];
-
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24">
+      <section className="container mx-auto px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight">
-            Download TikTok Videos Without Watermark
+          <div className="inline-block mb-6 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 border border-primary/30">
+            <span className="text-sm font-medium bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              ✨ Fast & Free TikTok Downloader
+            </span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              Download TikTok
+            </span>
+            <br />
+            <span className="text-foreground">Videos Instantly</span>
           </h1>
+          
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Fast, free, and easy TikTok video downloader. Save your favorite TikTok videos in high quality without watermarks.
+            Save your favorite TikTok videos in high quality without watermarks. No registration required.
           </p>
 
           {/* Download Form */}
-          <div className="bg-card rounded-2xl p-6 md:p-8 shadow-[var(--shadow-card)] border border-border">
-            <div className="flex flex-col md:flex-row gap-4">
-              <Input
-                type="url"
-                placeholder="Paste TikTok video URL here..."
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
-                className="flex-1 h-14 text-base"
-                disabled={loading}
-              />
-              <Button
-                onClick={handleDownload}
-                disabled={loading}
-                className="h-14 px-8 bg-gradient-to-r from-primary to-accent hover:opacity-90 transition-opacity"
-                size="lg"
-              >
-                {loading ? (
-                  "Processing..."
-                ) : (
-                  <>
-                    <Download className="w-5 h-5 mr-2" />
-                    Download
-                  </>
-                )}
-              </Button>
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-xl opacity-20"></div>
+            <div className="relative bg-card/50 backdrop-blur-xl rounded-3xl p-8 border border-border/50 shadow-[var(--shadow-card)]">
+              <div className="flex flex-col md:flex-row gap-4">
+                <Input
+                  type="url"
+                  placeholder="Paste TikTok video URL here..."
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
+                  className="flex-1 h-14 text-base bg-background/50 border-border/50 focus:border-primary"
+                  disabled={loading}
+                />
+                <Button
+                  onClick={handleDownload}
+                  disabled={loading}
+                  className="h-14 px-8 bg-gradient-to-r from-primary via-secondary to-accent hover:shadow-[var(--shadow-glow)] transition-all duration-300 font-semibold"
+                  size="lg"
+                >
+                  {loading ? (
+                    <span className="flex items-center gap-2">
+                      <div className="w-4 h-4 border-2 border-background/30 border-t-background rounded-full animate-spin" />
+                      Processing...
+                    </span>
+                  ) : (
+                    <>
+                      <Download className="w-5 h-5 mr-2" />
+                      Download
+                    </>
+                  )}
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground mt-4 text-left">
+                Paste any TikTok video link and download it in seconds - completely free!
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground mt-4 text-left">
-              Simply paste a TikTok video link above and click download. It's that easy!
-            </p>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24 bg-card/30">
+      {/* Features */}
+      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Why Choose TikSave?
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            The best TikTok downloader with no compromise on quality or speed
-          </p>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: Zap,
+                title: "Lightning Fast",
+                description: "Download videos in seconds with our optimized servers"
+              },
+              {
+                icon: Shield,
+                title: "100% Safe",
+                description: "No registration required. Your privacy is protected"
+              },
+              {
+                icon: Sparkles,
+                title: "High Quality",
+                description: "Get the best quality videos without watermarks"
+              }
+            ].map((feature, index) => (
               <div
                 key={index}
-                className="bg-card rounded-xl p-6 border border-border hover:shadow-[var(--shadow-elegant)] transition-shadow"
+                className="group relative"
               >
-                <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50 hover:border-primary/50 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center mb-4 shadow-[var(--shadow-glow)]">
+                    <feature.icon className="w-6 h-6 text-background" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* How It Works */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            How to Download TikTok Videos
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
+            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              How It Works
+            </span>
           </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            Follow these simple steps to download any TikTok video
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Download any TikTok video in 3 simple steps
           </p>
           
           <div className="space-y-6">
             {[
               {
-                step: "1",
-                title: "Copy TikTok Video URL",
-                description: "Open TikTok app, find the video you want to download, tap the Share button, and copy the link"
+                step: "01",
+                title: "Copy TikTok Link",
+                description: "Open TikTok, find your video, tap Share and copy the link"
               },
               {
-                step: "2",
+                step: "02",
                 title: "Paste URL",
-                description: "Paste the copied TikTok video URL into the input field above"
+                description: "Paste the link into the input field above"
               },
               {
-                step: "3",
-                title: "Download Video",
-                description: "Click the Download button and your video will be processed and ready to save"
+                step: "03",
+                title: "Download",
+                description: "Click download and save your video instantly"
               }
             ].map((item, index) => (
-              <div key={index} className="flex gap-4 items-start bg-card rounded-xl p-6 border border-border">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0 text-primary-foreground font-bold">
-                  {item.step}
+              <div key={index} className="flex gap-6 items-start group">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent rounded-2xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center flex-shrink-0">
+                    <span className="text-xl font-bold text-background">{item.step}</span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold mb-1">{item.title}</h3>
+                <div className="flex-1 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50 group-hover:border-primary/50 transition-all duration-300">
+                  <h3 className="text-xl font-semibold mb-2 text-foreground">{item.title}</h3>
                   <p className="text-muted-foreground">{item.description}</p>
                 </div>
               </div>
@@ -162,47 +177,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-16 md:py-24 bg-card/30">
+      {/* FAQ */}
+      <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Frequently Asked Questions
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-4">
+            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              FAQ
+            </span>
           </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            Everything you need to know about TikSave
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Common questions about TiksSave
           </p>
           
           <div className="space-y-4">
             {[
               {
-                q: "Is TikSave free to use?",
-                a: "Yes! TikSave is completely free to use. There are no hidden charges or subscription fees."
+                q: "Is TiksSave free to use?",
+                a: "Yes! TiksSave is completely free with no hidden charges or subscriptions."
               },
               {
-                q: "Do I need to register or login?",
-                a: "No registration is required. Simply paste the TikTok URL and download instantly."
+                q: "Do I need to create an account?",
+                a: "No registration required. Simply paste the URL and download instantly."
               },
               {
-                q: "Are the videos downloaded without watermark?",
-                a: "Yes, we provide options to download TikTok videos without the TikTok watermark in high quality."
+                q: "Can I download videos without watermark?",
+                a: "Yes, we provide high quality downloads without TikTok watermarks."
               },
               {
-                q: "Is it legal to download TikTok videos?",
-                a: "You should only download videos that you have the right to use. Respect content creators' rights and TikTok's terms of service."
-              },
-              {
-                q: "What devices can I use TikSave on?",
-                a: "TikSave works on all devices including desktop computers, tablets, and mobile phones with any modern browser."
+                q: "Is it safe to use?",
+                a: "Absolutely! We don't store your data or require any personal information."
               }
             ].map((faq, index) => (
-              <div key={index} className="bg-card rounded-xl p-6 border border-border">
-                <div className="flex gap-3 items-start">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-2">{faq.q}</h3>
-                    <p className="text-muted-foreground">{faq.a}</p>
-                  </div>
-                </div>
+              <div key={index} className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50 hover:border-primary/50 transition-all duration-300">
+                <h3 className="font-semibold text-lg mb-2 text-foreground">{faq.q}</h3>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>

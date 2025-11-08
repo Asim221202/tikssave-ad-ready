@@ -6,10 +6,12 @@ const Privacy = () => {
     <Layout>
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <Shield className="w-6 h-6 text-primary-foreground" />
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-[var(--shadow-glow)]">
+            <Shield className="w-6 h-6 text-background" />
           </div>
-          <h1 className="text-4xl font-bold">Privacy Policy</h1>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Privacy Policy
+          </h1>
         </div>
         
         <div className="prose prose-slate max-w-none">
@@ -17,10 +19,10 @@ const Privacy = () => {
             Last updated: {new Date().toLocaleDateString()}
           </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Introduction</h2>
             <p className="text-muted-foreground mb-4">
-              Welcome to TikSave. We respect your privacy and are committed to protecting your personal data. 
+              Welcome to TiksSave. We respect your privacy and are committed to protecting your personal data.
               This privacy policy will inform you about how we handle your data when you visit our website 
               and use our services.
             </p>

@@ -6,10 +6,12 @@ const DMCA = () => {
     <Layout>
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <AlertTriangle className="w-6 h-6 text-primary-foreground" />
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-[var(--shadow-glow)]">
+            <AlertTriangle className="w-6 h-6 text-background" />
           </div>
-          <h1 className="text-4xl font-bold">DMCA Policy</h1>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            DMCA Policy
+          </h1>
         </div>
         
         <div className="prose prose-slate max-w-none">
@@ -17,19 +19,19 @@ const DMCA = () => {
             Last updated: {new Date().toLocaleDateString()}
           </p>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Digital Millennium Copyright Act Notice</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Digital Millennium Copyright Act Notice</h2>
             <p className="text-muted-foreground mb-4">
-              TikSave respects the intellectual property rights of others and expects its users to do 
+              TiksSave respects the intellectual property rights of others and expects its users to do
               the same. In accordance with the Digital Millennium Copyright Act of 1998 (DMCA), we will 
               respond expeditiously to claims of copyright infringement committed using our website.
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Our Role</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Our Role</h2>
             <p className="text-muted-foreground mb-4">
-              TikSave is a tool that allows users to download publicly available TikTok videos. We do not:
+              TiksSave is a tool that allows users to download publicly available TikTok videos. We do not:
             </p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
               <li>Host or store any video content on our servers</li>
@@ -43,11 +45,11 @@ const DMCA = () => {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Copyright Infringement Claims</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Copyright Infringement Claims</h2>
             <p className="text-muted-foreground mb-4">
               If you believe that your copyrighted work has been copied in a way that constitutes 
-              copyright infringement and is accessible via TikSave, please notify us. Your notice 
+              copyright infringement and is accessible via TiksSave, please notify us. Your notice
               must include the following information:
             </p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
@@ -61,15 +63,15 @@ const DMCA = () => {
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">How to Submit a DMCA Notice</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">How to Submit a DMCA Notice</h2>
             <p className="text-muted-foreground mb-4">
               Please send your DMCA notice to us via our Contact page. Include "DMCA Notice" in the subject line.
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Counter-Notice</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Counter-Notice</h2>
             <p className="text-muted-foreground mb-4">
               If you believe that your content was removed or disabled by mistake or misidentification, 
               you may file a counter-notice. Your counter-notice must include:
@@ -84,8 +86,8 @@ const DMCA = () => {
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Repeat Infringers</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Repeat Infringers</h2>
             <p className="text-muted-foreground mb-4">
               In accordance with the DMCA and other applicable law, we have adopted a policy of 
               terminating, in appropriate circumstances, access to our service for users who are 
@@ -93,10 +95,10 @@ const DMCA = () => {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">User Responsibility</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">User Responsibility</h2>
             <p className="text-muted-foreground mb-4">
-              Users of TikSave are solely responsible for:
+              Users of TiksSave are solely responsible for:
             </p>
             <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
               <li>Ensuring they have the right to download any content</li>
@@ -106,8 +108,8 @@ const DMCA = () => {
             </ul>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Disclaimer</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Disclaimer</h2>
             <p className="text-muted-foreground mb-4">
               We are not liable for any misuse of our service by users. Users who download content 
               do so at their own risk and are responsible for ensuring they comply with all applicable 
@@ -115,8 +117,8 @@ const DMCA = () => {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4">Questions</h2>
+          <section className="mb-8 bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <h2 className="text-2xl font-semibold mb-4 text-foreground">Questions</h2>
             <p className="text-muted-foreground mb-4">
               If you have any questions about this DMCA Policy, please contact us through our Contact page.
             </p>

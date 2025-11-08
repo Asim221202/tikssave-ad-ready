@@ -48,10 +48,12 @@ const Contact = () => {
     <Layout>
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-            <Mail className="w-6 h-6 text-primary-foreground" />
+          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-[var(--shadow-glow)]">
+            <Mail className="w-6 h-6 text-background" />
           </div>
-          <h1 className="text-4xl font-bold">Contact Us</h1>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Contact Us
+          </h1>
         </div>
         
         <p className="text-muted-foreground text-lg mb-12">
@@ -62,7 +64,7 @@ const Contact = () => {
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
                   Name
                 </label>
                 <Input
@@ -73,11 +75,12 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                   maxLength={100}
+                  className="bg-background/50 border-border/50 focus:border-primary"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
                   Email
                 </label>
                 <Input
@@ -88,11 +91,12 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                   maxLength={255}
+                  className="bg-background/50 border-border/50 focus:border-primary"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
                   Message
                 </label>
                 <Textarea
@@ -103,12 +107,13 @@ const Contact = () => {
                   required
                   maxLength={2000}
                   rows={6}
+                  className="bg-background/50 border-border/50 focus:border-primary"
                 />
               </div>
 
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90"
+                className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:shadow-[var(--shadow-glow)] transition-all duration-300"
                 disabled={loading}
               >
                 {loading ? (
@@ -124,28 +129,28 @@ const Contact = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4">
-                <MessageSquare className="w-5 h-5 text-primary-foreground" />
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center mb-4 shadow-[var(--shadow-glow)]">
+                <MessageSquare className="w-5 h-5 text-background" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">General Inquiries</h3>
+              <h3 className="font-semibold text-lg mb-2 text-foreground">General Inquiries</h3>
               <p className="text-muted-foreground mb-4">
-                For general questions about our service, features, or how to use TikSave.
+                For general questions about our service, features, or how to use TiksSave.
               </p>
             </div>
 
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center mb-4">
-                <Mail className="w-5 h-5 text-primary-foreground" />
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center mb-4 shadow-[var(--shadow-glow)]">
+                <Mail className="w-5 h-5 text-background" />
               </div>
-              <h3 className="font-semibold text-lg mb-2">DMCA & Copyright</h3>
+              <h3 className="font-semibold text-lg mb-2 text-foreground">DMCA & Copyright</h3>
               <p className="text-muted-foreground mb-4">
                 For copyright-related matters, please include "DMCA" in your message subject and refer to our DMCA Policy page.
               </p>
             </div>
 
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="font-semibold text-lg mb-2">Response Time</h3>
+            <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+              <h3 className="font-semibold text-lg mb-2 text-foreground">Response Time</h3>
               <p className="text-muted-foreground">
                 We typically respond to all inquiries within 24-48 hours during business days.
               </p>
