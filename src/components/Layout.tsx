@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.jpeg";
+import CookieConsent from "./CookieConsent";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -119,6 +120,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </footer>
+      <CookieConsent />
     </div>
   );
 };
