@@ -213,8 +213,8 @@ const Home = () => {
               {
                 step: "02",
                 title: "Paste URL",
-                description: "Paste the link into the input field 
-                above"
+                // HATA ALINAN SATIR BURADA DÜZELTİLDİ:
+                description: "Paste the link into the input field above" 
               },
               {
                 step: "03",
@@ -261,13 +261,11 @@ const Home = () => {
               {
                 q: 
                 "Is TiksSave free to use?",
-                a: "Yes!
-                TiksSave is completely free with no hidden charges or subscriptions."
+                a: "Yes! TiksSave is completely free with no hidden charges or subscriptions."
               },
               {
                 q: "Do I need to create an account?",
-                a: "No registration required.
-                Simply paste the URL and download instantly."
+                a: "No registration required. Simply paste the URL and download instantly."
               },
               {
                 q: "Can I download videos without watermark?",
@@ -276,8 +274,7 @@ const Home = () => {
      
               {
                 q: "Is it safe to use?",
-                a: "Absolutely!
-                We don't store your data or require any personal information."
+                a: "Absolutely! We don't store your data or require any personal information."
               }
             ].map((faq, index) => (
               <div key={index} className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 border border-border/50 hover:border-primary/50 transition-all duration-300">
