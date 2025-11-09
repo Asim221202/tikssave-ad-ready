@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import logo from "@/assets/logo.jpeg";
 import CookieConsent from "./CookieConsent";
 
@@ -7,6 +9,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <header className="border-b border-border/50 backdrop-blur-sm sticky top-0 z-50 bg-card/30">
@@ -41,7 +45,43 @@ const Layout = ({ children }: LayoutProps) => {
               Contact
             </Link>
           </div>
+          
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </nav>
+        
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-border/50 bg-card/95 backdrop-blur-sm">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              <Link 
+                to="/about" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                to="/discord" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Discord
+              </Link>
+              <Link 
+                to="/contact" 
+                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="flex-1">{children}</main>
