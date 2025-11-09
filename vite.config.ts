@@ -12,6 +12,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: true,
     // --- YENİ EKLEME: PROXY AYARI ---
     proxy: {
       // Front-end'de '/api' ile başlayan tüm istekleri, back-end URL'sine yönlendir
